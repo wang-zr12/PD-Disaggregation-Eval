@@ -122,6 +122,22 @@ prefill and decode fixes it, and at what cost*.
 - **Qwen2.5-Coder-7B-Instruct** FP16, max_model_len = 8192
 - **A100 80 GB** (Stage 1) and **2× A100 40 GB** (Stage 2)
 
-## Status
+> *Note:* All pinned dependency versions in `requirements.txt` and the
+> notebook's `PINS` dict have been bumped post-archival to track the
+> latest stable releases of vLLM / Transformers / Tokenizers; the
+> harness, scripts, and configuration JSON keys remain unchanged.
 
-Archived as of 2024-12. All pinned dependency versions in requirements.txt and the notebook's PINS dict have been bumped post-archival to track the latest stable releases of vLLM / Transformers / Tokenizers; the harness, scripts, and configuration JSON keys remain unchanged. 
+## References
+
+1. Zhong, Y. *et al.* **DistServe: Disaggregating Prefill and Decoding for
+   Goodput-optimized Large Language Model Serving.** OSDI 2024.
+   [arXiv:2401.09670](https://arxiv.org/abs/2401.09670)
+2. Qin, R. *et al.* **Mooncake: A KVCache-centric Disaggregated Architecture
+   for LLM Serving.** 2024.
+   [arXiv:2407.00079](https://arxiv.org/abs/2407.00079)
+3. Chen, M. *et al.* **Evaluating Large Language Models Trained on Code**
+   (HumanEval). 2021.
+   [arXiv:2107.03374](https://arxiv.org/abs/2107.03374)
+4. Jimenez, C. E. *et al.* **SWE-bench: Can Language Models Resolve
+   Real-World GitHub Issues?** ICLR 2024.
+   [arXiv:2310.06770](https://arxiv.org/abs/2310.06770)
