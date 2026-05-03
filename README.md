@@ -133,7 +133,6 @@ prefill and decode fixes it, and at what cost*.
   `--kv-transfer-config PyNcclConnector` for PD
 - **Qwen2.5-Coder-7B-Instruct** FP16, max_model_len = 8192
 - **A100 80 GB** (Stage 1) and **2× A100 40 GB** (Stage 2)
-- Python 3.10+ • PyTorch 2.5.1 • Transformers 4.48.2 • aiohttp • pandas • matplotlib
 
 ## Status
 
