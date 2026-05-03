@@ -108,8 +108,8 @@ notes on vLLM 0.7.3 PD configuration.
 
 Stage 1 establishes a **workload characterization baseline** on a single GPU:
 where TTFT/TPOT degrade with concurrency and sequence length, what the SLO
-violation regime looks like, and which QPS range is interesting. Stage 2
-takes the same workload definition (same tokenizer, same three profiles —
+violation regime looks like, and which QPS range is interesting.
+Stage 2 takes the same workload definition (same tokenizer, same three profiles —
 inline_completion, code_explanation, function_generation) and compares
 architectures at production-relevant QPS levels. The single-GPU stage tells
 us *where the pain is*; the disaggregation stage tells us *whether splitting
