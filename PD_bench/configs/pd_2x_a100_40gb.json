@@ -1,0 +1,38 @@
+{
+    "host":          "single SSH host, 2× NVIDIA A100 40GB SXM4",
+    "interconnect":  "NVLink3 ~600 GB/s peer (override to 32 GB/s if PCIe-only SKU)",
+    "model":         "Qwen/Qwen2.5-Coder-7B-Instruct, FP16, max_model_len=8192",
+    "colocated": {
+        "gpu_id":        0,
+        "port":          8000,
+        "gpu_mem_util":  0.88
+    },
+    "pd": {
+        "prefill_gpu_id":   0,
+        "decode_gpu_id":    1,
+        "prefill_port":     8100,
+        "decode_port":      8200,
+        "proxy_port":       8000,
+        "kv_connector":     "PyNcclConnector",
+        "kv_buffer_size":   5000000000,
+        "kv_parallel_size": 2
+    },
+    "workload_profiles": {
+        "inline_completion":   {"TTFT_SLO": 0.5,  "weight": 0.50},
+        "code_explanation":    {"TTFT_SLO": 1.5,  "weight": 0.25},
+        "function_generation": {"TTFT_SLO": 1.0,  "weight": 0.25}
+    },
+    "sweep": {
+        "profiles":     ["inline_completion", "code_explanation", "function_generation"],
+        "qps_grid":     [5, 10, 20, 30, 50],
+        "duration_s":   180,
+        "cooldown_s":   10,
+        "n_configurations": 30
+    },
+    "headline": {
+        "qps":          20,
+        "duration_s":   300,
+        "slo_ttft_s":   1.0,
+        "profile":      "mixed"
+    }
+}

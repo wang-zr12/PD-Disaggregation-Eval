@@ -1,0 +1,14 @@
+numpy==1.26.4
+pandas==2.2.2
+pyarrow==18.1.0
+torch==2.5.1
+torchvision==0.20.1
+torchaudio==2.5.1
+xformers==0.0.28.post3
+transformers==4.48.2
+tokenizers==0.21.0
+vllm==0.7.3
+nest_asyncio
+aiohttp
+huggingface_hub
+matplotlib
