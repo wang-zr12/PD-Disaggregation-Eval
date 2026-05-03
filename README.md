@@ -6,18 +6,6 @@ End-to-end evaluation of **Prefill–Decode (PD) disaggregation on vLLM** for
 code-completion workloads, comparing a strong single-GPU colocated baseline
 against a 2-GPU disaggregated deployment.
 
-## Headline result
-
-Under a 20 QPS mixed code-completion workload (HumanEval + SWE-bench shaped),
-PD disaggregation on **2× A100 40 GB** vs colocated baseline on **1× A100
-80 GB**:
-
-- **P99 TTFT** reduced by **~50%**
-- **SLO (<1 s) compliance** lifted from **45% → 92%**
-
-Roofline + KV-cache transmission cost modelling identifies the QPS × ISL
-boundary above which disaggregation becomes profitable, validated by a
-30-configuration sweep (3 workload profiles × 5 QPS levels × 2 architectures).
 
 ## Project structure
 
@@ -136,5 +124,4 @@ prefill and decode fixes it, and at what cost*.
 
 ## Status
 
-Archived as of 2024-12. All scripts run; results in `vllm_bench/results/`
-and `PD_bench/results/` reproduce the headline numbers.
+Archived as of 2024-12. All pinned dependency versions in requirements.txt and the notebook's PINS dict have been bumped post-archival to track the latest stable releases of vLLM / Transformers / Tokenizers; the harness, scripts, and configuration JSON keys remain unchanged. 
