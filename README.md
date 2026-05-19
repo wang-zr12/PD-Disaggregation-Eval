@@ -64,7 +64,7 @@ orchestration. Outputs land in `results/` (parquet + csv + json + png/pdf).
 
 ### Stage 2 — PD disaggregation (cloud SSH host)
 
-On a single host with 2× NVIDIA A100 40 GB:
+2P 1D:
 
 ```bash
 cd PD_bench
